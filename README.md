@@ -5,7 +5,7 @@
 
 A lightweight, educational Rust application designed to demonstrate core language concepts through a practical configuration parsing scenario. This tool simulates reading and processing a configuration file, showcasing variable management, type safety, and string manipulation in Rust.
 
-## 🚀 Features
+## Features
 
 This project serves as a practical example of the following Rust concepts:
 
@@ -16,7 +16,7 @@ This project serves as a practical example of the following Rust concepts:
 - **String Parsing**: extracting key-value pairs from raw text data.
 - **Error Handling**: Basic error management when parsing data types.
 
-## 🛠️ Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -25,7 +25,7 @@ Before you begin, ensure you have the following installed:
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   ```
 
-## 📦 Installation
+## Installation
 
 1.  **Clone the repository**
     ```bash
@@ -38,7 +38,7 @@ Before you begin, ensure you have the following installed:
     cargo build
     ```
 
-## 🏃 Usage
+## Usage
 
 Run the application using `cargo`:
 
@@ -64,7 +64,7 @@ Found port: 3000
 ---Final Configuration---
 ```
 
-## 📂 Project Structure
+## Project Structure
 
 The core logic resides in `src/main.rs`:
 
@@ -83,10 +83,10 @@ fn main() {
 }
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! If you'd like to improve this educational tool or add more complex parsing features (like TOML or JSON support), feel free to fork the repository and submit a Pull Request.
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
