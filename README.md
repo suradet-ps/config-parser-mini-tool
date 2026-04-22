@@ -29,7 +29,7 @@ Before you begin, ensure you have the following installed:
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/pharmacist-sabot/config-parser-mini-tool.git
+    git clone https://github.com/suradet-ps/config-parser-mini-tool.git
     cd config-parser-mini-tool
     ```
 
