@@ -1,92 +1,127 @@
 # Config Parser Mini Tool
 
-![Rust](https://img.shields.io/badge/rust-edition%202024-orange)
-![License](https://img.shields.io/badge/license-MIT-blue)
-
-A lightweight, educational Rust application designed to demonstrate core language concepts through a practical configuration parsing scenario. This tool simulates reading and processing a configuration file, showcasing variable management, type safety, and string manipulation in Rust.
-
-## Features
-
-This project serves as a practical example of the following Rust concepts:
-
-- **Constants**: Usage of `const` for system-wide immutable values (e.g., default ports, timeouts).
-- **Immutability by Default**: Demonstrating how Rust handles variables that don't need to change.
-- **Mutable Variables**: Using `mut` for counters and state that evolves during execution.
-- **Variable Shadowing**: A powerful Rust feature allowing variables to be redeclared in the same scope, useful for type transformations (e.g., parsing a string port to an integer).
-- **String Parsing**: extracting key-value pairs from raw text data.
-- **Error Handling**: Basic error management when parsing data types.
-
-## Prerequisites
-
-Before you begin, ensure you have the following installed:
-
-- **Rust**: You can install Rust using `rustup`.
-  ```bash
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  ```
-
-## Installation
-
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/suradet-ps/config-parser-mini-tool.git
-    cd config-parser-mini-tool
-    ```
-
-2.  **Build the project**
-    ```bash
-    cargo build
-    ```
-
-## Usage
-
-Run the application using `cargo`:
-
-```bash
-cargo run
+```
+ ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
+██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝ ╚═════╝
 ```
 
-### Expected Output
+---
 
-You should see output demonstrating the parsing process:
+## ◆ PULSE
 
-```text
---- Parsing Configuration ---
-Input:
-host=127.0.0.1
-port=3000
-max_connections=100
+Rust's rules are best learned in a problem small enough to see all of
+them at once. This is that problem: a configuration parser that
+simulates reading `host=127.0.0.1` style key-value lines - and in
+doing so walks the language's core ideas one by one: `const` for the
+defaults, immutability by default, `mut` for the counters, variable
+shadowing to turn a string port into a number, and error handling
+where the parsing can fail. An educational tool with a real shape.
 
-Initial host: localhost, port 8080
-Found host: 127.0.0.1
-Found port: 3000
+| Const ▣ | Shadowing ▣ | Parsing ▣ | Errors ▣ |
+|---|---|---|---|
 
----Final Configuration---
+*The lesson - read, parse, transform, fail gracefully - is sealed.*
+
+> Built with Rust (edition 2024) - one file, one scenario, six
+> language concepts demonstrated in the open.
+>
+> **suradet-ps**, artifact keeper
+
+---
+
+## ◆ IGNITION
+
+One toolchain, two commands.
+
+```
+⟫ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+⟫ git clone https://github.com/suradet-ps/config-parser-mini-tool.git
+⟫ cd config-parser-mini-tool
+⟫ cargo build
+⟫ cargo run
 ```
 
-## Project Structure
+The output walks the parse: the initial defaults, the values found in
+the input, and the final configuration.
 
-The core logic resides in `src/main.rs`:
+---
 
-```rust
-fn main() {
-    // Constants for default values
-    const DEFAULT_PORT: u16 = 8080;
-    
-    // Simulating config input
-    let config_input = "host=127.0.0.1\nport=3000...";
+## ◆ ANATOMY
 
-    // Parsing logic loop
-    for line in config_input.lines() {
-        // ...
-    }
-}
+One `main.rs`, six concepts, no distractions.
+
+- **Defaults** - `const DEFAULT_PORT` and friends hold the
+  system-wide values - the immutable baseline every parse starts
+  from.
+- **Stands** - immutability by default: variables that do not change
+  are written without `mut`, and the compiler says so if someone
+  forgets.
+- **Counts** - `mut` appears only where state genuinely evolves -
+  counters and values that move through the parse.
+- **Shadows** - variable shadowing transforms a string port into a
+  `u16` in the same scope - the old name reborn with a new type, a
+  concept shown rather than lectured.
+- **Parses** - key-value pairs are extracted from raw text with
+  Rust's string methods - `lines()`, splitting, trimming - the daily
+  vocabulary of text handling.
+- **Fails** - parsing errors are handled, not ignored: the tool
+  shows how a type conversion can go wrong and what the program
+  does about it.
+
+---
+
+## ◆ RITUALS
+
+**The core ceremony** - the first run:
+
+1. Build with `cargo build`; the compiler is the first reviewer.
+2. Run with `cargo run`; the parse walks the input line by line.
+3. Read the output: defaults, found values, and the final
+   configuration - the transformation visible from end to end.
+4. Study the source: every concept in the lesson has a line it can
+   be pointed at.
+
+**The ceremony of the small shape** - the tool stays one file and
+one scenario on purpose: a larger problem would bury the concepts it
+exists to teach. The size is the syllabus.
+
+**The ceremony of the honest failure** - parsing can fail, and the
+code says so. Learning that errors are handled, not papered over, is
+part of the lesson - the tool refuses to pretend a bad port is a
+good one.
+
+---
+
+## ◆ ECHOES
+
+**Where this artifact is heading**
+
+```
+const  ▸ immutable system defaults ──────────────────────────────────── ▸ sealed
+shadow ▸ string-to-number type transformation ───────────────────────── ▸ sealed
+parse  ▸ key-value extraction from raw text ─────────────────────────── ▸ sealed
+errors ▸ handled conversion failures ────────────────────────────────── ▸ sealed
 ```
 
-## Contributing
+**Raising the artifact** - the whole lesson lives in `src/main.rs`.
+A contribution extends the scenario - TOML or JSON support would
+teach more - via the fork-and-PR path. Open an issue first to discuss
+a change.
 
-Contributions are welcome! If you'd like to improve this educational tool or add more complex parsing features (like TOML or JSON support), feel free to fork the repository and submit a Pull Request.
+**Status** - the tool is complete as an educational example and open
+to extension.
 
-## License
+---
 
-This project is open source and available under the [MIT License](LICENSE).
+```
+  ─────────────────────────────────────────
+   A language is learned one concept
+   at a time, in code that runs.
+  ─────────────────────────────────────────
+```
+
+Open source under the [MIT License](LICENSE).
