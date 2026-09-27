@@ -1,13 +1,8 @@
 # Config Parser Mini Tool
 
-```
- ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
-██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
-██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
-██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
-╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
- ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝ ╚═════╝
-```
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Rust: stable](https://img.shields.io/badge/rust-stable-orange.svg?logo=rust&logoColor=white)](https://www.rust-lang.org/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/suradet-ps/config-parser-mini-tool/issues)
 
 ---
 
